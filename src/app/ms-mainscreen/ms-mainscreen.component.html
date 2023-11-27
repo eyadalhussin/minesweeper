@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lemon">
+
+<div class="mainContainer" style="user-select: none;">
+    <!-- Container For the Logo -->
+    <div class="firstContainer">
+        <img class="logo" src="assets/Minesweeper/logo.PNG" alt="Logo">
+    </div>
+
+    <div class="secondContainer">
+        <button class="startButton" (click)="start()">Start</button>
+    </div>
+    <!-- Container for the Controls -->
+    <div class="thirdContainer">
+        <div class="diffCont">
+            <mat-icon class="arrow_icon_right" *ngIf="diffSelected == 'easy'">arrow_right</mat-icon>
+            <button (click)="selectDiff('easy')">
+                <p class="diff">Easy</p>
+            </button>
+            <mat-icon class="arrow_icon_left" *ngIf="diffSelected == 'easy'">arrow_left</mat-icon>
+        </div>
+        <div class="diffCont">
+            <mat-icon class="arrow_icon_right" *ngIf="diffSelected == 'med'">arrow_right</mat-icon>
+            <button (click)="selectDiff('med')">
+                <p class="diff">Med</p>
+            </button>
+            <mat-icon class="arrow_icon_left" *ngIf="diffSelected == 'med'">arrow_left</mat-icon>
+        </div>
+        <div class="diffCont">
+            <mat-icon class="arrow_icon_right" *ngIf="diffSelected == 'hard'">arrow_right</mat-icon>
+            <button  (click)="selectDiff('hard')">
+                <p class="diff">Hard</p>
+            </button>
+            <mat-icon class="arrow_icon_left" *ngIf="diffSelected == 'hard'">arrow_left</mat-icon>
+        </div>
+    </div>
+</div>

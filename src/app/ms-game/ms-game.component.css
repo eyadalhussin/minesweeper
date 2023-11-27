@@ -1,0 +1,228 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:host(app-ms-game){
+    height: 90%;
+    width: 90%;
+}
+
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    height: 100%;
+    width: 100%;
+}
+
+.topContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+}
+
+.midContainer{
+    display: flex;
+    height: 80%;
+    width: 100%;
+    background-color: blue;
+}
+
+.bottomContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 10%;
+    width: 100%;
+}
+
+.leftBottom{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    left: 0;
+    top: 25%;
+}
+
+.leftBottomButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.rightBottom{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mineContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.mineImg{
+    user-select: none;
+    max-width: 60%;
+    max-height: 60%;
+}
+
+.iconCont{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    max-height: 80%;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.timer{
+    color: white;
+    font-size: 1.1em;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.iconImg{
+    max-width: 35%;
+    max-height: 80%;
+}
+
+.iconImgWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #fff;
+    height: 100%;
+    width: 15%;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.iconImgBottom{
+    height: 80%;
+    width: 70%;
+}
+
+
+.text{
+    font-family: 'Lemon';
+    color: white;
+    font-size: 1.2em;
+}
+
+
+
+/* GRID */
+.felderContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    background-color: white;
+    gap: 2px;
+}
+
+.felderRow{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 2px;
+}
+
+.felderColumn{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.feld{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    width: fit-content;
+    height: fit-content;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s linear;
+}
+
+.faceButton{
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pointButton{
+    cursor: pointer;
+}
+
+.face{
+    color: white;
+    font-size: 1.5em;
+}
+
+button{
+    all: unset;
+}
+
+.arrowIcon{
+    color: white;
+    transform: scaleX(5) scaleY(4);
+}
+
+/* .feld:hover{ */
+    /* background-color: white;
+    border: -3px solid #002586;  */
+/* } */
+/* GRID */
+
+.largeCount{
+    font-size: 1.5em;
+    user-select: none;
+}
+
+@media (min-width:992px) {
+    :host(app-ms-game){
+        height: 90%;
+        width: 40%;
+    }
+    .iconCont{
+        max-height: 100%;
+        max-width: 20%;
+    }
+    .iconImg{
+        max-height: 100%;
+        max-width: 35%;
+    }
+    .mineImg{
+        max-width: 40%;
+        max-height: 100%;
+    }
+    .text{
+        font-size: 2em;
+    }
+}

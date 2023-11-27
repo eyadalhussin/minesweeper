@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lemon">
+
+<div class="mainContainer">
+    <!-- Top Bar -->
+    <div class="topContainer">
+        <div class="iconCont">
+            <img class="iconImg" src="assets/Minesweeper/Mine.png" alt="">
+            <span class="timer">{{mineCount}}</span>
+        </div>
+        <div class="iconCont">
+            <button class="faceButton" (click)="restart()">
+                <img class="iconImg pointButton" src="assets/Minesweeper/normal.png" alt="" *ngIf="!gameOver && !won">
+                <img class="iconImg pointButton" src="assets/Minesweeper/won.png" alt="" *ngIf="gameOver && won">
+                <img class="iconImg pointButton" src="assets/Minesweeper/lose.png" alt="" *ngIf="gameOver && !won">
+            </button>
+        </div>
+        <div class="iconCont">
+            <img class="iconImg" src="assets/Minesweeper/Clock.png" alt="">    
+                <span class="timer"><span *ngIf="minutes < 10">0</span>{{minutes}}:<span *ngIf="seconds < 10">0</span>{{seconds}}</span>
+        </div>
+    </div>
+    <!-- Top Bar -->
+    <div class="midContainer">
+        <div class="felderContainer">
+            <div class="felderRow" *ngFor="let element of mineFelder">
+                <div class="felderColumn" *ngFor="let col of element">
+                    <div class="feld" (click)="checkFeld(col)" [style]="{'background-color':col.background}">
+                        <div class="mineContainer" *ngIf="col.isMine && !col.isHidden">
+                            <img class="mineImg" src="assets/Minesweeper/Mine.png" alt="">
+                        </div>
+                        <div class="mineContainer" *ngIf="col.isFlag && col.isHidden">
+                            <img class="mineImg" src="assets/Minesweeper/Flag.png" alt="">
+                        </div>
+                        <span class="text largeCount" *ngIf="!col.isHidden && col.mineCount > 0"
+                            [style]="{'color':col.color}">{{col.mineCount}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Bar -->
+    <div class="bottomContainer">
+        <!-- Left Bottom -->
+        <div class="leftBottom">
+            <button class="leftBottomButton" (click)="back()">
+                <mat-icon class="arrowIcon">arrow_left_ios_new</mat-icon>
+                <span class="text">Back</span>
+            </button>
+        </div>
+        <!-- Right Bottom Bottom -->
+        <div class="rightBottom">
+            <button class="iconImgWrapper pointButton" (click)="switchMode()">
+                <img class="mineImg" src="assets/Minesweeper/Flag.png" alt="" *ngIf="mode == 'Flagging'">
+                <img class="mineImg" src="assets/Minesweeper/Mine.png" alt="" *ngIf="mode == 'Mining'">
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:host(app-ms-mainscreen) {
+    height: 90%;
+    width: 90%;
+}
+
+.mainContainer {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+.firstContainer {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondContainer{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.thirdContainer {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.diffCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 5em;
+    align-items: center;
+    width: 100%;
+}
+
+.arrow_icon_left{
+    color: #EB6300;
+    transform: scale(6, 4);
+    animation: arrowLeft 0.5s alternate linear infinite;
+}
+.arrow_icon_right{
+    color: #EB6300;
+    transform: scale(6, 4);
+    animation: arrowRight 0.5s alternate linear infinite;
+}
+.logo {
+    max-width: 90%;
+    max-height: 50%;
+}
+
+.diff{
+    font-family: 'Lemon';
+    color: white;
+    font-size: 2.5em;
+}
+
+button{
+    all: unset;
+    cursor: pointer;
+}
+
+.startButton{
+    font-family: 'Lemon';
+    color: whitesmoke;
+    font-size: 2em;
+    letter-spacing: 0.1em;
+    border: 3px solid whitesmoke;
+    border-radius: 20px;
+    padding: 0.2em;
+    background-color: #EB6300;
+    transition: 0.2s linear;
+}
+
+.startButton:hover{
+    transform: scale(1.1);
+}
+
+@keyframes arrowLeft {
+    from{
+        transform: scale(6,4) translateX(20%);
+    }
+
+    to{
+        transform: scale(6,4) translateX(10%);
+    }
+}
+@keyframes arrowRight {
+    from{
+        transform: scale(6,4) translateX(-20%);
+    }
+    to{
+        transform: scale(6,4) translateX(-10%);
+    }
+}
+
+@media (min-width: 992px) {
+    :host(app-ms-mainscreen) {
+        height: 90%;
+        width: 40%;
+    }
+}
